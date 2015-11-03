@@ -33,6 +33,10 @@ span.logo {
   font-family: 'Lobster', cursive;
 }
 
+span.logonav {
+  font-size: 2em;
+}
+
 .select:hover {
   background-color: rgba(0, 204, 163, .1);
 }
