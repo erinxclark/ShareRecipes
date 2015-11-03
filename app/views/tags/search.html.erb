@@ -1,0 +1,32 @@
+<%= render('header') %>
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-8 main">
+
+
+    <h2>Search for Recipes by Tag</h2>
+
+    <form action="/tags/search" method="get">
+      <label for="search_by_tag">Tag Name:</label>
+      <input id="search_by_tag" type="text" name="search_string"/>
+      <input type="submit" value="Search"/>
+    <form>
+
+    <% if !@tags.nil? %>
+      <% if !@tags.empty? %>
+        <h3>Recipes Found</h3>
+          <% @tags.each do |tag| %>
+            <%= link_to(tag.recipe.title, tag.recipe) %><br>
+          <% end %>
+          <% else %>
+        <h3>No Recipes Found :(</h3>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>

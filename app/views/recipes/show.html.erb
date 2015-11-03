@@ -1,0 +1,73 @@
+<%= render('header') %>
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8 main">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Title:</strong>
+        <%= @recipe.title %>
+      </p>
+
+      <p>
+        <strong>Author:</strong>
+        <%= @recipe.author %>
+      </p>
+
+      <p>
+        <strong>Ingredients:</strong>
+        <%= @recipe.ingredients %>
+      </p>
+
+      <p>
+        <strong>Instructions:</strong>
+        <%= @recipe.instructions %>
+      </p>
+
+      <p>
+        <strong>Tags:</strong>
+        <% @recipe.tags.each do |tag| %>
+        <%= tag.name %>,
+        <% end %>
+      </p>
+
+
+      <p>
+        <strong>Average Rating:</strong>
+        <% if !@recipe.ratings.average(:stars).nil? %>
+          <%= @recipe.ratings.average(:stars).round(1) %>
+          <% end %>
+      </p>
+
+      <form action="/recipes/<%=@recipe.id%>/add_tag" method="post">
+        <div class="field">
+          <label for="tag_name">Tag Name</label><br>
+          <input type="text" name="tag[name]" id="tag_name" />
+        </div>
+        <div class="actions">
+          <input type="submit" name="commit" value="Add Tag" />
+        </div>
+      </form>
+
+      <form action="/recipes/<%=@recipe.id%>/add_rating" method="post">
+          <label for="star_rating">Rating</label><br>
+          <select  class="input" name="rating[stars]" id="star_rating">
+            <option class="rate">Rate Me</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+          </select>
+        <div class="actions"><br>
+          <input type="submit" name="commit" value="Rate" />
+        </div>
+      </form>
+
+      <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+      <%= link_to 'Back', recipes_path %>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
