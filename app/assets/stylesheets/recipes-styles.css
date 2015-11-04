@@ -34,6 +34,10 @@ span.logo {
   font-family: 'Lobster', cursive;
 }
 
+span.logonav {
+  font-size: 2em;
+}
+
 input {
   color: black;
 }
@@ -51,5 +55,7 @@ td {
   font-size: 30px
 }
 
-table {
+.foodpic {
+  padding-top: 20px;
+  
 }

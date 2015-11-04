@@ -37,6 +37,10 @@ gem 'devise'
 
 gem 'protected_attributes'
 
+# Paperclip
+
+gem 'paperclip'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
