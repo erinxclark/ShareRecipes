@@ -3,7 +3,10 @@
   <link href="/stylesheets/recipes-styles.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <title>Share Recipes</title>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/random_recipe.js"></script>
 </head>
+
 <body>
   <div class="row">
     <div class="col-md-1">
@@ -18,10 +21,6 @@
     </div>
     <div class="col-md-6">
       <nav class="navbar navbar-default">
-
-
-
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -58,5 +57,27 @@
       <p id="about"><strong>About <span class="logo">ShareRecipes!</span></strong> We are a community of professional and recreational cooks devoted to sharing our craft with the world. Cooking is our passion and we want a crowdsourced database of delicious and well-ranked recipes to bring to our friends and families.</p>
     </div>
     <div class="col-md-2">
+    </div>
+  </div>
+  <br></br>
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8 main">
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <h3>Featured Recipe!</h3>
+            <h4 id="recipe_title"></h4>
+            <h5 id="recipe_ingredients"></h5>
+            <div id="recipe_image"></div>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
     </div>
 </body>

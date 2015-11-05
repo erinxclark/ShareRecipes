@@ -48,3 +48,9 @@ input {
 .input {
   color: black;
 }
+
+#recipe_image {
+  height: 330px;
+  width: 600px;
+  overflow: hidden;
+}

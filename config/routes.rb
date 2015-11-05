@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  match '/recipes/get_random_recipe', {:via => :get, :to => 'recipes#get_random_recipe'}
+
   devise_for :users
   match '/tags/search', {:via => :get, :to => 'tags#search'}
   resources :tags
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   match '/', :via => [:get], :to => redirect('/home.html')
 
   match('/recipes/:id/add_tag', {:via => :post, :to => 'recipes#add_tag'})
-  resources :recipes
 
   match('/recipes/:id/add_rating', {:via => :post, :to => 'recipes#add_rating'})
   resources :recipes

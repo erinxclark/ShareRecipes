@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_filter :authenticate_user!, except:  [:index, :show, :get_random_recipe]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
@@ -83,6 +84,13 @@ end
       @recipe.save
     end
   render 'show.html.erb'
+  end
+
+  def get_random_recipe
+     @recipe = Recipe.all.sample
+     respond_to do |format|
+     format.json { render :show, status: :ok, location: @recipe }
+     end
   end
 
   private
